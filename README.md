@@ -40,3 +40,8 @@ Run the Powershell script `.\build_app.ps1` by either:
 - Or run `powershell build_app.ps1` in your Terminal
 
 This will create a dist/ folder that contains the app's exe file.
+
+
+## Use with Firefox
+
+In Firefox, go to Settings > General tab > Applications field. In the Content type column, look for "Compressed (zipped) Folder (application/zip)" and change the Action to use this built exe file.

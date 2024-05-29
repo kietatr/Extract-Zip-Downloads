@@ -51,7 +51,7 @@ def main():
     args = sys.argv[1:]
     
     if len(args) == 0:
-        print("Need to supply a command line argument to the file path")
+        print("\nNeed to supply a command line argument to the compressed file's path")
         return
     
     compressed_file_path = args[0]
