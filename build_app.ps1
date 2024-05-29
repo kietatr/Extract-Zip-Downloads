@@ -1,5 +1,5 @@
-[string]$VIRTUAL_ENV = "unzip_files"
-[string]$MAIN_FILE = "extract_zip_to_downloads.py"
+$VIRTUAL_ENV = "venv"
+$MAIN_FILE = "extract_zip_downloads.py"
 
 & ./$VIRTUAL_ENV/Scripts/Activate.ps1
 

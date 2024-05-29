@@ -1,6 +1,6 @@
-# Extract files to Downloads folder
+# Auto Extract Downloaded Compressed (Zipped) Files
 
-Auto extract file to the D:\Downloads folder. 
+Auto extract downloaded compressed files (`.zip, .rar, .tar, .tar.gz, .tar.bz2, .7z`).
 
 Useful for Firefox to automatically extract a compressed file after it's been downloaded.  
 
@@ -11,18 +11,18 @@ Works on Windows.
 
 1. Clone this repo. Make sure you already have Python installed on your computer.
 
-2. Open **Powershell**. `cd` into the cloned repo. Set up a virtual environment called `unzip_files` for this repo using Python's `venv`: 
+2. Open **Powershell**. `cd` into the cloned repo. Set up a virtual environment called `venv` for this repo using Python's `venv`: 
 
 ```
-py -m venv unzip_files
+py -m venv venv
 ```
 
-Or `python3 -m venv unzip_files`
+Or `python3 -m venv venv`
 
 3. Activate the virtual environment:
 
 ```
-.\unzip_files\Scripts\Activate.ps1
+.\venv\Scripts\Activate.ps1
 ```
 
 4. Install the required packages:
@@ -38,10 +38,10 @@ Or `python3 -m pip install -r requirements.txt`
 
 Run the Powershell script `.\build_app.ps1` by either:
 
-- Right-click > Run with Powershell
+- **Right-click > Run with Powershell**
 - Or run `powershell build_app.ps1` in your Terminal
 
-This will create a dist/ folder that contains the app's exe file.
+This will create a dist/ folder that contains the app's .exe file.
 
 
 ## How to use with Firefox

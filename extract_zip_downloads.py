@@ -5,8 +5,6 @@ import tarfile
 import rarfile
 import py7zr
 
-EXTRACT_TO_LOCATION = "D:/DOWNLOADS"
-
 def extract_zip(file_path, extract_to):
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
@@ -56,30 +54,30 @@ def main():
     
     compressed_file_path = args[0]
     extracted_folder_name = Path(compressed_file_path).with_suffix('')
-    extract_to_fullpath = Path(EXTRACT_TO_LOCATION) / extracted_folder_name
+    extract_to_path = Path(compressed_file_path).parent / extracted_folder_name
     
     if not Path(compressed_file_path).exists():
         print(f'\nFile does not exists: {compressed_file_path}')
         return
 
-    print(f"\nDo you want to use this script to handle unzipping this file? \n\t{compressed_file_path} \n(YES = 'Y'/'Yes'/ENTER, NO = Anything else) ")
-    answer = input()
-    if answer.upper() in ["Y", "YES", ""]:
-        pass
-    else:
-        return
+    # print(f"\nDo you want to use this script to handle unzipping this file? \n\t{compressed_file_path} \n(YES = 'Y'/'Yes'/ENTER, NO = Anything else) ")
+    # answer = input()
+    # if answer.upper() in ["Y", "YES", ""]:
+    #     pass
+    # else:
+    #     return
 
-    print(f"\nFile will be extracted to {extract_to_fullpath}. Rename the folder? \n(YES = Type in new name then ENTER, NO = ENTER) ")    
-    answer = input()
-    if len(answer) > 0:
-        extracted_folder_name = answer
-        extract_to_fullpath = Path(EXTRACT_TO_LOCATION) / extracted_folder_name
-    else:
-        pass
+    # print(f"\nFile will be extracted to {extract_to_fullpath}. Rename the folder? \n(YES = Type in new name then ENTER, NO = ENTER) ")    
+    # answer = input()
+    # if len(answer) > 0:
+    #     extracted_folder_name = answer
+    #     extract_to_fullpath = Path(compressed_file_path).parent / extracted_folder_name
+    # else:
+    #     pass
     
-    extract_file(compressed_file_path, extract_to_fullpath)
+    extract_file(compressed_file_path, extract_to_path)
 
 if __name__ == "__main__":
     main()
-    print("\nPress Enter to exit...")
-    input()
+    # print("\nPress Enter to exit...")
+    # input()
