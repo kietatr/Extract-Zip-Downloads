@@ -1,11 +1,13 @@
 # Extract files to Downloads folder
 
-Auto extract file to the D:\Downloads folder 
+Auto extract file to the D:\Downloads folder. 
 
-Works on Windows
+Useful for Firefox to automatically extract a compressed file after it's been downloaded.  
+
+Works on Windows.
 
 
-## Set Up (Windows)
+## Development Set Up (Windows)
 
 1. Clone this repo. Make sure you already have Python installed on your computer.
 
@@ -32,7 +34,7 @@ py -m pip install -r requirements.txt
 Or `python3 -m pip install -r requirements.txt`
 
 
-## Building an executable (.exe) file
+## Building the executable (.exe) file
 
 Run the Powershell script `.\build_app.ps1` by either:
 
@@ -42,6 +44,9 @@ Run the Powershell script `.\build_app.ps1` by either:
 This will create a dist/ folder that contains the app's exe file.
 
 
-## Use with Firefox
+## How to use with Firefox
 
-In Firefox, go to Settings > General tab > Applications field. In the Content type column, look for "Compressed (zipped) Folder (application/zip)" and change the Action to use this built exe file.
+In Firefox:
+- Go to **Settings > General tab**. Scroll down to the **Applications** field
+  - Or go to **Settings** and type in "zip" in the Search bar
+- In the "Content type" column, look for **Compressed (zipped) Folder (application/zip)** and change the "Action" to use this built exe file.
