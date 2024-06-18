@@ -4,6 +4,7 @@ import zipfile
 import tarfile
 import rarfile
 import py7zr
+import time
 
 def extract_zip(file_path, extract_to):
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
@@ -22,6 +23,8 @@ def extract_7z(file_path, extract_to):
         seven_zip_ref.extractall(extract_to)
 
 def extract_file(file_path, extract_to):
+    print(f"\nExtracting {file_path} ...")
+
     if not Path(extract_to).exists():
         extract_to.mkdir(parents=True, exist_ok=True)
 
@@ -40,7 +43,9 @@ def extract_file(file_path, extract_to):
     else:
         print(f"\nUnsupported file format: {file_path}")
         return
-    print(f"\nExtracted {file_path} to {extract_to}")
+    
+    print(f"\nExtracted to {extract_to}")
+
 
 def main():
     print(f'Running {sys.argv[0]} ...')
@@ -79,5 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # print("\nPress Enter to exit...")
-    # input()
+    time.sleep(3)
